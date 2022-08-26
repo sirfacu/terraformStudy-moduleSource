@@ -1,15 +1,21 @@
-data "aws_ami" "dataAmiId" {
-  most_recent = true
-  owners = ["amazon"]
-
-
-  filter {
-    name   = "name"
-    values = ["amzn2-ami-hvm*"]
-  }
+locals {
+  arr = ["host1","host2","host3"]
+}
+locals {
+  arr2 = ["host1","host2","host3"]
+}
+locals {
+  arr3 = ["host1","host2","host3"]
 }
 
-resource "aws_instance" "myDemoInstance" {
-  ami           = data.aws_ami.dataAmiId.id
-  instance_type = "t2.micro"
-}  
+outputs "test" {
+  value = local.arr
+}
+
+outputs "test2" {
+  value = local.arr2
+}
+
+outputs "test3" {
+  value = local.arr3
+}
