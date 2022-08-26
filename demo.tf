@@ -8,14 +8,14 @@ locals {
   arr3 = ["host1","host2","host3"]
 }
 
-outputs "test" {
+output "test" {
   value = local.arr
 }
 
-outputs "test2" {
+output "test2" {
   value = local.arr2
 }
 
-outputs "test3" {
+output "test3" {
   value = local.arr3
 }
